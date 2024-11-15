@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "telemedicine.video.provider",
+    "type": "java.lang.String",
+    "description": "A description for 'telemedicine.video.provider'"
+  },
+  {
+    "name": "payment.gateway.provider",
+    "type": "java.lang.String",
+    "description": "A description for 'payment.gateway.provider'"
+  }
+]}

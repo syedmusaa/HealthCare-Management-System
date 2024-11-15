@@ -1,0 +1,77 @@
+Appointment:-
+http://localhost:8080/appointments/new
+{
+  "id": 1,
+  "patient": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "appointmentDateTime": "2024-11-20T10:00:00",
+  "doctorName": "Dr. Emily Smith",
+  "appointmentType": "In-Person",
+  "notes": "Follow-up for hypertension",
+  "status": "Confirmed"
+}
+
+Medical-Record:-
+http://localhost:8080/medical-records/new
+{
+  "id": 1,
+  "patient": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "recordDate": "2024-10-10",
+  "diagnosis": "Hypertension",
+  "treatment": "Lifestyle changes and medication",
+  "prescription": "Amlodipine 5mg once daily",
+  "notes": "Patient advised to monitor blood pressure daily and follow a low-sodium diet."
+}
+
+
+Patients:-
+http://localhost:8080/patients/new
+{
+  "id": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "dateOfBirth": "1985-06-15",
+  "phoneNumber": "+1234567890",
+  "appointments": [
+    {
+      "id": 1,
+      "appointmentDate": "2024-11-20",
+      "appointmentTime": "10:00",
+      "doctorName": "Dr. Smith",
+      "department": "Cardiology",
+      "status": "Confirmed"
+    },
+    {
+      "id": 2,
+      "appointmentDate": "2024-12-05",
+      "appointmentTime": "14:00",
+      "doctorName": "Dr. Lee",
+      "department": "Dermatology",
+      "status": "Pending"
+    }
+  ],
+  "medicalRecords": [
+    {
+      "id": 1,
+      "recordDate": "2024-10-10",
+      "diagnosis": "Hypertension",
+      "treatment": "Medication",
+      "notes": "Patient advised to reduce sodium intake."
+    },
+    {
+      "id": 2,
+      "recordDate": "2024-11-01",
+      "diagnosis": "Skin Allergy",
+      "treatment": "Antihistamines",
+      "notes": "Avoid exposure to allergens."
+    }
+  ]
+}
