@@ -43,7 +43,7 @@ public class Patient {
     private LocalDate dateOfBirth;
 
     @Column(nullable = false)
-    private String phoneNumber;
+    private long phoneNumber;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Appointment> appointments;
