@@ -95,9 +95,19 @@ public class AmbulanceController {
     
 
     @PutMapping("/{id}/location")
-    public ResponseEntity<Ambulance> updateAmbulanceLocation(@PathVariable Long id, @RequestParam String newLocation) {
+    public ResponseEntity<Ambulance> updateAmbulanceLocation(@PathVariable Long id, @RequestParam String newLocation, @RequestParam String newDriver) {
         
-    	Ambulance updatedAmbulance = ambulanceService.updateAmbulanceLocation(id, newLocation);
+    	Ambulance updatedAmbulance = ambulanceService.updateAmbulanceLocation(id, newLocation, newDriver);
+        
+    	return ResponseEntity.ok(updatedAmbulance);
+    }
+    
+    
+    
+    @PutMapping("/{id}/driver")
+    public ResponseEntity<Ambulance> updateAmbulanceDriver(@PathVariable Long id, @RequestParam String newDriver) {
+        
+    	Ambulance updatedAmbulance = ambulanceService.updateAmbulanceDriver(id, newDriver);
         
     	return ResponseEntity.ok(updatedAmbulance);
     }

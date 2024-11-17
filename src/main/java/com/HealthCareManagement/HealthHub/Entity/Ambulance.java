@@ -19,8 +19,12 @@ public class Ambulance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String driverName;
+    
     private String vehicleNumber;
+    
     private String currentLocation;
+    
     private String status;
 
     // Constructors, getters, and setters

@@ -63,6 +63,8 @@ public class AmbulanceService {
         Ambulance ambulance = ambulanceRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ambulance not found with id: " + id));
 
+        ambulance.setDriverName(ambulanceDetails.getDriverName());
+        
         ambulance.setVehicleNumber(ambulanceDetails.getVehicleNumber());
         
         ambulance.setCurrentLocation(ambulanceDetails.getCurrentLocation());
@@ -77,14 +79,33 @@ public class AmbulanceService {
     
 
 
-    public Ambulance updateAmbulanceLocation(Long id, String newLocation) {
+    public Ambulance updateAmbulanceLocation(Long id, String newLocation, String newDriver) {
     	
         Ambulance ambulance = ambulanceRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ambulance not found with id: " + id));
 
         ambulance.setCurrentLocation(newLocation);
+       
+        ambulance.setDriverName(newDriver);
+        
         return ambulanceRepository.save(ambulance);
     }
+    
+    
+    
+public Ambulance updateAmbulanceDriver(Long id, String newDriver) {
+    	
+        Ambulance ambulance = ambulanceRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ambulance not found with id: " + id));
+
+        ambulance.setCurrentLocation(newDriver);
+       
+        
+        return ambulanceRepository.save(ambulance);
+    }
+    
+    
+    
     
     
     
@@ -97,6 +118,7 @@ public class AmbulanceService {
                 .orElseThrow(() -> new RuntimeException("Ambulance not found with id: " + id));
 
         ambulance.setStatus(newStatus);
+        
         return ambulanceRepository.save(ambulance);
     }
     
