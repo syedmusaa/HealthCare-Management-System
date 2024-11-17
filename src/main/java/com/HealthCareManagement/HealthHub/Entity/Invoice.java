@@ -42,6 +42,22 @@ public class Invoice {
     @Column(nullable = false)
     private BigDecimal totalAmount;
 
+    @Column(nullable = true)
+    private String insuranceProvider;
+    
+    @Column(nullable = true)
+    private String insurancePolicyNumber;
+
+    @Column(nullable = true)
+    private BigDecimal insuranceCoverage;
+    
+    @Column(nullable = true)
+    private BigDecimal patientResponsibility;
+    
+    @Column(nullable = true)
+    private boolean isAyushmanCard;
+
+
     @Column(nullable = false)
     private String paymentStatus;
 

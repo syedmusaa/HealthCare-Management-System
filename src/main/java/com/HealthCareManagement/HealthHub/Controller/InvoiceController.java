@@ -17,15 +17,21 @@ import com.HealthCareManagement.HealthHub.Entity.Invoice;
 import com.HealthCareManagement.HealthHub.Service.InvoiceService;
 
 @RestController
-@RequestMapping("/api/appointments")
+@RequestMapping("/invoices")
 public class InvoiceController {
 
 	@Autowired
     private InvoiceService invoiceService;
 
-    @PostMapping
+    @PostMapping("/createInvoice")
     public ResponseEntity<Invoice> createInvoice(@RequestBody Invoice invoice) {
-        return ResponseEntity.ok(invoiceService.saveInvoice(invoice));
+    	Invoice createinvoice = invoiceService.saveInvoice(invoice);
+        return ResponseEntity.ok(createinvoice);
+    }
+    
+    @PostMapping("/new")
+    public Invoice createInvoice(@RequestBody Invoice invoice, @PathVariable Long patientId) {
+        return invoiceService.createInvoice(invoice, patientId);
     }
 
     @GetMapping("/{id}")
@@ -39,8 +45,9 @@ public class InvoiceController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Invoice> updateInvoice(@PathVariable Long id, @RequestBody Invoice invoice) {
-        return ResponseEntity.ok(invoiceService.updateInvoice(id, invoice));
+    public ResponseEntity<Invoice> updateInvoice(@PathVariable Long id, @RequestBody Invoice invoicedetails) {
+    	Invoice updateInvoice = invoiceService.updateInvoice(id, invoicedetails);
+        return ResponseEntity.ok(updateInvoice);
     }
 
     @DeleteMapping("/{id}")

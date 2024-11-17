@@ -26,7 +26,8 @@ public class PatientService {
     
 
     public Patient getPatientById(Long id) {
-        return patientRepository.findById(id).orElseThrow(() -> new RuntimeException("Patient not found"));
+        return patientRepository.findById(id)
+        		.orElseThrow(() -> new RuntimeException("Patient not found"));
     }
 
     
@@ -50,11 +51,17 @@ public class PatientService {
         
         existingPatient.setLastName(patient.getLastName());
         
+        existingPatient.setGender(patient.getGender());
+        
         existingPatient.setEmail(patient.getEmail());
         
         existingPatient.setDateOfBirth(patient.getDateOfBirth());
         
         existingPatient.setPhoneNumber(patient.getPhoneNumber());
+        
+//        existingPatient.setAppointments(patient.getAppointments());
+        
+//        existingPatient.setMedicalRecords(patient.getMedicalRecords());
         
         return patientRepository.save(existingPatient);
     }

@@ -25,6 +25,14 @@ public class PatientController {
     public ResponseEntity<Patient> getPatient(@PathVariable Long id) {
         return ResponseEntity.ok(patientService.getPatientById(id));
     }
+    
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+//        return patientService.getPatientById(id)
+//                .map(ResponseEntity::ok)
+//                .orElse(ResponseEntity.notFound().build());
+//    }
+
 
     @GetMapping
     public ResponseEntity<List<Patient>> getAllPatients() {
