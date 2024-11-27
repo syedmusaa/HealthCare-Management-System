@@ -75,3 +75,80 @@ http://localhost:8080/patients/new
     }
   ]
 }
+
+
+
+
+{
+
+  "firstName":"",
+
+  "lastName":"",
+
+   "gender":"",
+   
+   "email":"",
+
+   "dateOfBirth": "",
+
+   "phoneNumber":
+
+   "appointments":[
+
+	"patient_id": 1,
+
+    "appointmentDateTime": "",
+	
+    "doctorName": "",
+ 
+    "appointmentType": "",
+	 
+	"notes": "",
+
+	"status": ""
+],
+
+   "medicalRecords":[
+
+    "patient_id": 1,
+
+    "recordDate": "",
+
+    "diagnosis": "",
+
+    "treatment": "",
+
+    "prescription": "",
+
+    "notes": ""
+],
+
+    "invoices":[
+    
+    "patient_id": 1,
+
+    "invoiceDate": "",
+
+    "totalAmount": ,
+
+    "insuranceProvider": "",
+    
+    "insurancePolicyNumber": ,
+
+    "insuranceCoverage": "",
+    
+    "patientResponsibility": ,
+    
+    
+    "isAyushmanCard": "",
+
+    "paymentStatus": "",
+
+    "description": ""
+
+   
+    "payments":[
+    
+    ]
+]
+}

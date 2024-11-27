@@ -1,8 +1,7 @@
 package com.HealthCareManagement.HealthHub.Entity;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "notifications")
-public class Notification {
+@Table(name = "telemedicine_sessions")
+public class TelemedicineSession {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,25 +28,18 @@ public class Notification {
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
-    @Column(nullable = false)
-    private String message;
-
-    @Column(nullable = false)
-    private LocalDateTime sentDateTime;
-
-    @Column(nullable = false)
-    private String notificationType;
+    private Date sessionDate;
     
-    @Column(nullable = false)
-    private String recipient;
+    private String sessionStatus;
+    
+    private String videoRecordingUrl;
+    
+    private String chatHistory;
+    
+//  @ManyToOne
+//  @JoinColumn(name = "doctor_id", nullable = false)
+//  private Doctor doctor;
 
-    @Column(nullable = false)
-    private boolean isRead;
+    // Constructors, getters, and setters
 
-//	public static void deleteById(Long id2) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-    // Getters and setters
 }
