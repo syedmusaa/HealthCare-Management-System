@@ -26,8 +26,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "invoices")
 public class Invoice {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
